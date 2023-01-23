@@ -1,5 +1,9 @@
-This repo contains the code files for the **C - printf** project. The project involves building the *printf* utility from scratch, using
+This repo is created and maintained by Osaruonamen Jeffery O and Abiy Aman.
+
+This repo contains the code files for the **C - printf** project.
+The project involves building the *printf* utility from scratch, using
 only the following functions:
+
 - write
 - malloc
 - free
