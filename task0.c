@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 	bytes_written = 0;
 	fmt = (char *)format;
 
-	for (; *fmt != '\0' && format != NULL; fmt ++)
+	for (; *fmt != '\0' && format != NULL; fmt++)
 	{
 		while (*fmt != '%')
 		{
