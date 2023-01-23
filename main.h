@@ -7,6 +7,8 @@
 #include <stdarg.h>
 #include <stdlib.h>
 int _printf(const char *format, ...);
-int string_len(char *);
-int format_string(char *, va_list arg);
+int slen(char *);
+void write_format(char, va_list arg, int *);
+int write_char(char str);
+void write_string(char *, int);
 #endif
