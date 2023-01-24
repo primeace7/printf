@@ -28,5 +28,6 @@ int _printf(const char *format, ...)
 			write_format(*format, arg, &bytes_written);
 		}
 	}
+	va_end(arg);
 	return (bytes_written);
 }
