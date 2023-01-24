@@ -1,34 +1,63 @@
 #include "main.h"
 #include <stdarg.h>
+#include <stdio.h>
+
+void print_buffer(char buffer[], int *buff_ind);
 
 /**
- * _printf - write formated output to stdout
- * @format: the formated string to write to stdout
- * Return: the number of characters(bytes) written
+ * _printf - Printf function
+ * @format: format.
+ * Return: Printed chars.
  */
-
 int _printf(const char *format, ...)
 {
-	int bytes_written, i;
-	va_list arg;
+	int i, printed = 0, printed_chars = 0;
+	int flags, width, precision, size, buff_ind = 0;
+	va_list list;
+	char buffer[BUFF_SIZE];
 
-	if(format == NULL)
+	if (format == NULL)
 		return (-1);
-	
-	va_start(arg, format);
+
+	va_start(list, format);
 
 	for (i = 0; format && format[i] != '\0'; i++)
 	{
-		if (*format != '%')
+		if (format[i] != '%')
 		{
-			bytes_written += write_char(*format);
-			i++;
+			buffer[buff_ind++] = format[i];
+			if (buff_ind == BUFF_SIZE)
+				print_buffer(buffer, &buff_ind);
+			/* write(1, &format[i], 1);*/
+			printed_chars++;
 		}
 		else
 		{
-			write_format(*format, arg, &bytes_written);
+			print_buffer(buffer, &buff_ind);
+			++i;
+			printed = handle_print(format, &i, list, buffer);
+			if (printed == -1)
+				return (-1);
+			printed_chars += printed;
 		}
 	}
-	va_end(arg);
-	return (i);
+
+	print_buffer(buffer, &buff_ind);
+
+	va_end(list);
+
+	return (printed_chars);
+}
+
+/**
+ * print_buffer - Prints the contents of the buffer if it exist
+ * @buffer: Array of chars
+ * @buff_ind: Index at which to add next char, represents the length.
+ */
+void print_buffer(char buffer[], int *buff_ind)
+{
+	if (*buff_ind > 0)
+		write(1, &buffer[0], *buff_ind);
+
+	*buff_ind = 0;
 }
