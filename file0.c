@@ -9,7 +9,7 @@
 
 int _printf(const char *format, ...)
 {
-	int bytes_written;
+	int bytes_written, i = 0;
 	va_list arg;
 
 	if(format == NULL)
@@ -17,16 +17,18 @@ int _printf(const char *format, ...)
 	
 	va_start(arg, format);
 
-	for (; *format != '\0' && format != NULL; format++)
+	for (; *format != '\0' && format; format++)
 	{
-		for (; *format != '%'; format++)
-			bytes_written += write_char(*format);
-		if (*format == '%')
+		if (*format != '%')
 		{
-			format++;
+			bytes_written += write_char(*format);
+			i++;
+		}
+		else
+		{
 			write_format(*format, arg, &bytes_written);
 		}
 	}
 	va_end(arg);
-	return (bytes_written);
+	return (i);
 }
