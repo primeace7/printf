@@ -1,39 +1,14 @@
-#ifndef MAIN_H
-#define MAIN_H
-#include <stdarg.h>
-#include <stdio.h>
+#ifndef _PRINT_H_
+#define _PRINT_H_
+
 #include <unistd.h>
-
-#define UNUSED(x) (void)(x)
-#define BUFF_SIZE 1024
-
-/**
- * struct fmt - Struct op
- * struct defination
- * @fmt: The format.
- * @fn: The function associated.
- */
-struct fmt
-{
-	char fmt;
-	int (*fn)(va_list, char[], int, int, int, int);
-};
-
-
-/**
- * typedef struct fmt fmt_t - Struct op
- * typedefination
- * @fmt: The format.
- * @fm_t: The function associated.
- */
-typedef struct fmt fmt_t;
-
+#include <stdio.h>
+#include <stddef.h>
+#include <stdarg.h>
+#include <stdlib.h>
 int _printf(const char *format, ...);
-int handle_print(const char *fmt, int *i, va_list list, char buffer[]);
-
-/* Funtions to print chars and strings */
-int print_char(va_list types, char buffer[]);
-int print_string(va_list types, char buffer[]);
-int print_percent(va_list types, char buffer[]);
-
+int slen(char *);
+void write_format(char, va_list arg, int *);
+int write_char(char str);
+void write_string(char *, int);
 #endif
