@@ -11,6 +11,11 @@ int _printf(const char *format, ...)
 	int bytes_written;
 	va_list arg;
 
+	if(format == NULL)
+	{
+		return (-1);
+	}
+	
 	va_start(arg, format);
 
 	for (; *format != '\0' && format != NULL; format++)
