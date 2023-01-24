@@ -9,7 +9,7 @@
 
 int _printf(const char *format, ...)
 {
-	int bytes_written, i = 0;
+	int bytes_written, i;
 	va_list arg;
 
 	if(format == NULL)
@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 	
 	va_start(arg, format);
 
-	for (; *format != '\0' && format; format++)
+	for (i = 0; format && format[i] != '\0'; i++)
 	{
 		if (*format != '%')
 		{
