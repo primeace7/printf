@@ -40,8 +40,8 @@ int print_ids(char ch1, va_list list)
 
 int _printf(const char *format, ...)
 {
-	unsigned int i;
-	unsigned int print_special = 0, printed_char = 0;
+	int i;
+	int print_special = 0, printed_char = 0;
 	va_list list;
 
 	va_start(list, format);
