@@ -3,14 +3,14 @@
 #include <stdio.h>
 
 /**
- * printIdentify - print identify
- * @ac: character after the %
+ * printIdentifiers - print identify
+ * @next: character after the %
  * @list: argument for the cr
  * Return: the number of characters printed
  * (excluding the null byte used to end output to strings)
  */
 
-int printIdentify(char ac, va_list list)
+int printIdentifiers(char next, va_list list)
 {
 	int j;
 
@@ -22,7 +22,7 @@ int printIdentify(char ac, va_list list)
 
 	for (j = 0; functionPrint[j].xy != NULL; j++)
 	{
-		if (functionPrint[j].xy[0] == ac)
+		if (functionPrint[j].xy[0] == next)
 			return (functionPrint[j].printer(list));
 	}
 	return (0);
@@ -66,7 +66,7 @@ int _printf(const char *format, ...)
 		if (format[i + 1] == '\0')
 			return (-1);
 
-		a = printIdentify(format[i + 1], list);
+		a = printIdentifiers(format[i + 1], list);
 		if (a == -1 || a != 0)
 			i++;
 		if (a > 0)
