@@ -4,18 +4,18 @@
 #include <stdarg.h>
 
 /**
- * structidentify - print ids
+ * printIdentify - print ids
  * @ch1: character after the %
  * @list: argument for the cr
  * Return: the number of characters printed
  * (excluding the null byte used to end output to strings)
  */
 
-int printidentify(char ch1, va_list list)
+int printIdentify(char ch1, va_list list)
 {
 	int func_i;
 
-	structidentify func_list[] = {
+	structIdentify func_list[] = {
 		{"c", print_char},
 		{"s", print_str},
 		{NULL, NULL}
@@ -67,7 +67,7 @@ int _printf(const char *format, ...)
 		if (format[i + 1] == '\0')
 			return (-1);
 
-		print_special = printidentify(format[i + 1], list);
+		print_special = printIdentify(format[i + 1], list);
 		if (print_special == -1 || print_special != 0)
 			i++;
 		if (print_special > 0)
