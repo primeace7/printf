@@ -9,7 +9,6 @@ int print_char(va_list list);
 int print_str(va_list list);
 int print_unsigned(va_list list);
 int print_int(va_list list);
-int print_percent(void);
 /**
  * struct identifierStruct - structure definition of a printTypeStruct
  * @xy: type
