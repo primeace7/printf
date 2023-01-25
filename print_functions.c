@@ -59,7 +59,7 @@ return (i + 1);
 
 /**
  * print_int - prints an integer.
- * @arg: argument
+ * @list: argument
  * Return: 0
  */
 
