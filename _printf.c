@@ -14,7 +14,7 @@ int printIdentify(char ac, va_list list)
 {
 	int j;
 
-	identifyStruct functionPrint[] = {
+	identifierStruct functionPrint[] = {
 		{"c", print_char},
 		{"s", print_str},
 		{NULL, NULL}
