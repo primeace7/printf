@@ -1,10 +1,8 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
-#include <stdarg.h>
-
 /**
- * printIdentify - print ids
+ * printIdentify - print identify
  * @ch: character after the %
  * @list: argument for the cr
  * Return: the number of characters printed
@@ -20,7 +18,7 @@ int printIdentify(char ch, va_list list)
 		{"s", print_str},
 		{NULL, NULL}
 	};
-	
+
 	for (j = 0; functionPrint[j].chr != NULL; j++)
 	{
 		if (functionPrint[j].chr[0] == ch)
