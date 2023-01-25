@@ -5,7 +5,7 @@
 #include <limits.h>
 
 /**
- * print_ids - print ids
+ * structidentify - print ids
  * @ch1: character after the %
  * @list: argument for the cr
  * Return: the number of characters printed
