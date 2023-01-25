@@ -8,7 +8,7 @@ int _printf(const char *format, ...);
 int print_char(va_list list);
 int print_str(va_list list);
 /**
- * struct identifierStruct - definition
+ * struct identifierStruct - structure definition of a printTypeStruct
  * @xy: type
  * @printer: function to print
  */

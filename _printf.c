@@ -46,7 +46,7 @@ int _printf(const char *format, ...)
 
 	va_start(list, format);
 	if (format == NULL)
-		return (-1);
+			return (-1);
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
@@ -64,13 +64,13 @@ int _printf(const char *format, ...)
 			continue;
 		}
 		if (format[i + 1] == '\0')
-			return (-1);
+				return (-1);
 
 		a = printIdentifiers(format[i + 1], list);
 		if (a == -1 || a != 0)
-			i++;
+				i++;
 		if (a > 0)
-			b += a;
+				b += a;
 
 		if (a == 0)
 		{
