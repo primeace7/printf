@@ -42,7 +42,7 @@ int printIdentify(char ch, va_list list)
 int _printf(const char *format, ...)
 {
 	int i;
-	int print_special = 0, printed_char = 0;
+	int a = 0, b = 0;
 	va_list list;
 
 	va_start(list, format);
@@ -54,31 +54,31 @@ int _printf(const char *format, ...)
 		if (format[i] != '%')
 		{
 			_putchar(format[i]);
-			printed_char++;
+			b++;
 			continue;
 		}
 		if (format[i + 1] == '%')
 		{
 			_putchar('%');
-			printed_char++;
+			b++;
 			i++;
 			continue;
 		}
 		if (format[i + 1] == '\0')
 			return (-1);
 
-		print_special = printIdentify(format[i + 1], list);
-		if (print_special == -1 || print_special != 0)
+		a = printIdentify(format[i + 1], list);
+		if (a == -1 || a != 0)
 			i++;
-		if (print_special > 0)
-			printed_char += print_special;
+		if (a > 0)
+			b += a;
 
-		if (print_special == 0)
+		if (a == 0)
 		{
 			_putchar('%');
-			printed_char++;
+			b++;
 		}
 	}
 	va_end(list);
-	return (printed_char);
+	return (b);
 }
