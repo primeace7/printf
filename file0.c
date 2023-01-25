@@ -20,10 +20,10 @@ int printIdentify(char ch, va_list list)
 		{"s", print_str},
 		{NULL, NULL}
 	};
-
-	for (j = 0; functionPrint[j].cr != NULL; j++)
+	
+	for (j = 0; functionPrint[j].chr != NULL; j++)
 	{
-		if (functionPrint[j].cr[0] == ch)
+		if (functionPrint[j].chr[0] == ch)
 			return (functionPrint[j].printer(list));
 	}
 	return (0);
@@ -70,6 +70,7 @@ int _printf(const char *format, ...)
 		a = printIdentify(format[i + 1], list);
 		if (a == -1 || a != 0)
 			i++;
+
 		if (a > 0)
 			b += a;
 

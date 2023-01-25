@@ -9,12 +9,12 @@ int print_char(va_list list);
 int print_str(va_list list);
 /**
  * struct identifyStruct - definition ...
- * @cr: type
+ * @chr: type
  * @printer: function to print
  */
 typedef struct identifyStruct
 {
-char *cr;
+char *chr;
 int (*printer)(va_list);
 } identifyStruct;
 
