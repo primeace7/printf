@@ -13,18 +13,18 @@
 
 int printIdentify(char ch, va_list list)
 {
-	int func_i;
+	int j;
 
-	identifyStruct func_list[] = {
+	identifyStruct functionPrint[] = {
 		{"c", print_char},
 		{"s", print_str},
 		{NULL, NULL}
 	};
 
-	for (func_i = 0; func_list[func_i].cr != NULL; func_i++)
+	for (j = 0; functionPrint[j].cr != NULL; j++)
 	{
-		if (func_list[func_i].cr[0] == ch)
-			return (func_list[func_i].printer(list));
+		if (functionPrint[j].cr[0] == ch)
+			return (functionPrint[j].printer(list));
 	}
 	return (0);
 }
