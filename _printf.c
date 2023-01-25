@@ -16,8 +16,7 @@ int printIdentifiers(char next, va_list list)
 
 	identifierStruct functionPrint[] = {
 		{"c", print_char},
-		{"s", print_str},
-		{NULL, NULL}
+		{"s", print_str}
 	};
 
 	for (j = 0; functionPrint[j].xy != NULL; j++)
