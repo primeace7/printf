@@ -3,7 +3,7 @@
 #include <stdio.h>
 /**
  * printIdentify - print identify
- * @ch: character after the %
+ * @ac: character after the %
  * @list: argument for the cr
  * Return: the number of characters printed
  * (excluding the null byte used to end output to strings)
