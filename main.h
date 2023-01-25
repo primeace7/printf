@@ -14,7 +14,7 @@ int print_str(va_list list);
  */
 typedef struct identifyStruct
 {
-char *chr;
+char *xy;
 int (*printer)(va_list);
 } identifyStruct;
 

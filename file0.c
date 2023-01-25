@@ -9,7 +9,7 @@
  * (excluding the null byte used to end output to strings)
  */
 
-int printIdentify(char ch, va_list list)
+int printIdentify(char ac, va_list list)
 {
 	int j;
 
@@ -19,9 +19,9 @@ int printIdentify(char ch, va_list list)
 		{NULL, NULL}
 	};
 
-	for (j = 0; functionPrint[j].chr != NULL; j++)
+	for (j = 0; functionPrint[j].xy != NULL; j++)
 	{
-		if (functionPrint[j].chr[0] == ch)
+		if (functionPrint[j].xy[0] == ac)
 			return (functionPrint[j].printer(list));
 	}
 	return (0);
@@ -44,6 +44,7 @@ int _printf(const char *format, ...)
 	va_list list;
 
 	va_start(list, format);
+
 	if (format == NULL)
 		return (-1);
 
