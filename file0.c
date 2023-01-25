@@ -5,17 +5,17 @@
 
 /**
  * printIdentify - print ids
- * @ch1: character after the %
+ * @ch: character after the %
  * @list: argument for the cr
  * Return: the number of characters printed
  * (excluding the null byte used to end output to strings)
  */
 
-int printIdentify(char ch1, va_list list)
+int printIdentify(char ch, va_list list)
 {
 	int func_i;
 
-	structIdentify func_list[] = {
+	identifyStruct func_list[] = {
 		{"c", print_char},
 		{"s", print_str},
 		{NULL, NULL}
@@ -23,7 +23,7 @@ int printIdentify(char ch1, va_list list)
 
 	for (func_i = 0; func_list[func_i].cr != NULL; func_i++)
 	{
-		if (func_list[func_i].cr[0] == ch1)
+		if (func_list[func_i].cr[0] == ch)
 			return (func_list[func_i].printer(list));
 	}
 	return (0);
