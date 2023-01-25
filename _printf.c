@@ -20,6 +20,7 @@ int printIdentifiers(char next, va_list list)
 		{"u", print_unsigned},
 		{"d", print_int},
 		{"i", print_int},
+		{"%%", print_percent},
 		{NULL, NULL}
 	};
 

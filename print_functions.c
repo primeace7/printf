@@ -13,6 +13,15 @@ int print_char(va_list list)
 }
 
 /**
+ * print_percent - prints a percent
+ * Return: number of char printed
+ */
+int print_percent()
+{
+	return (_putchar('%'));
+}
+
+/**
  * print_str - prints a string with a `s`
  * @list: argument
  * Return: number of character printed
