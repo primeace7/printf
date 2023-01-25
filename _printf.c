@@ -16,7 +16,9 @@ int printIdentifiers(char next, va_list list)
 
 	identifierStruct functionPrint[] = {
 		{"c", print_char},
-		{"s", print_str}
+		{"s", print_str},
+		{"u", print_unsigned},
+		{NULL, NULL}
 	};
 
 	for (j = 0; functionPrint[j].xy != NULL; j++)
@@ -34,7 +36,7 @@ int printIdentifiers(char next, va_list list)
  * 
  * Return: the number of characters printed
  * (excluding the null byte used to end output to strings)
- * return -1 for error
+ * return -1 for incomplete identifier error
  */
 
 int _printf(const char *format, ...)
@@ -66,6 +68,7 @@ int _printf(const char *format, ...)
 				return (-1);
 
 		a = printIdentifiers(format[i + 1], list);
+
 		if (a == -1 || a != 0)
 				i++;
 		if (a > 0)

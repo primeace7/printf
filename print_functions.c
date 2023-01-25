@@ -34,3 +34,25 @@ for (i = 0; str[i]; i++)
 
 return (i);
 }
+
+/**
+ * print_unsigned - prints an unsigned int.
+ * @list: argument
+ * Return: 0
+ */
+
+int print_unsigned(va_list list)
+{
+int z = 1, i, x;
+unsigned int n = va_arg(list, unsigned int);
+
+for (i = 0; n / z > 9; i++, z *= 10)
+;
+
+for (; z >= 1; n %= z, z /= 10)
+{
+	x = n / z;
+	_putchar('0' + x);
+}
+return (i + 1);
+}
