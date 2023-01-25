@@ -39,12 +39,11 @@ int printIdentify(char ac, va_list list)
 
 int _printf(const char *format, ...)
 {
-	int i;
+	unsigned int i;
 	int a = 0, b = 0;
 	va_list list;
 
 	va_start(list, format);
-
 	if (format == NULL)
 		return (-1);
 
@@ -69,7 +68,6 @@ int _printf(const char *format, ...)
 		a = printIdentify(format[i + 1], list);
 		if (a == -1 || a != 0)
 			i++;
-
 		if (a > 0)
 			b += a;
 
