@@ -20,15 +20,15 @@ int print_char(va_list list)
 int print_str(va_list list)
 {
 int i;
-char *ch2 = va_arg(list, char*);
+char *ch = va_arg(list, char*);
 
-if (ch2 == NULL)
-	ch2 = "(null)";
-else if (*ch2 == '\0')
+if (ch == NULL)
+	ch = "(null)";
+else if (*ch == '\0')
 	return (-1);
 
-for (i = 0; ch2[i]; i++)
-	_putchar(ch2[i]);
+for (i = 0; ch[i]; i++)
+	_putchar(ch[i]);
 
 return (i);
 }
