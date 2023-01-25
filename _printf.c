@@ -41,7 +41,6 @@ int print_ids(char ch1, va_list list)
 int _printf(const char *format, ...)
 {
 	unsigned int i;
-	//int identifierPrinted = 0, charPrinted = 0;
 	int print_special = 0, printed_char = 0;
 	va_list list;
 
