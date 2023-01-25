@@ -26,7 +26,6 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			write_format(*format, arg, &bytes_written);
 			i++;
 		}
 	}
