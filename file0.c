@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+
 /**
  * printIdentify - print identify
  * @ac: character after the %
@@ -28,10 +29,10 @@ int printIdentify(char ac, va_list list)
 }
 
 /**
- * _printf - mimic printf from stdio
+ * _printf - printf function 
  * Description: produces output according to a format
- * write output to stdout, the standard output stream
  * @format: character string composed of zero or more directives
+ * 
  * Return: the number of characters printed
  * (excluding the null byte used to end output to strings)
  * return -1 for error

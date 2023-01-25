@@ -17,18 +17,19 @@ int print_char(va_list list)
  * @list: argument
  * Return: number of character printed
  */
+
 int print_str(va_list list)
 {
 int i;
-char *ch = va_arg(list, char*);
+char *str = va_arg(list, char*);
 
-if (ch == NULL)
-	ch = "(null)";
-else if (*ch == '\0')
+if (str == NULL)
+	str = "(null)";
+else if (*str == '\0')
 	return (-1);
 
-for (i = 0; ch[i]; i++)
-	_putchar(ch[i]);
+for (i = 0; str[i]; i++)
+	_putchar(str[i]);
 
 return (i);
 }
