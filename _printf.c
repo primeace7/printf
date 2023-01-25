@@ -22,7 +22,7 @@ int printIdentifiers(char next, va_list list)
 	for (j = 0; functionPrint[j].xy != NULL; j++)
 	{
 		if (functionPrint[j].xy[0] == next)
-			return (functionPrint[j].printer(list));
+				return (functionPrint[j].printer(list));
 	}
 	return (0);
 }
