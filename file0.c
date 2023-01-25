@@ -12,11 +12,11 @@
  * (excluding the null byte used to end output to strings)
  */
 
-int print_ids(char ch1, va_list list)
+int printidentify(char ch1, va_list list)
 {
 	int func_i;
 
-	id_Str func_list[] = {
+	structidentify func_list[] = {
 		{"c", print_char},
 		{"s", print_str},
 		{NULL, NULL}
@@ -68,7 +68,7 @@ int _printf(const char *format, ...)
 		if (format[i + 1] == '\0')
 			return (-1);
 
-		print_special = print_ids(format[i + 1], list);
+		print_special = printidentify(format[i + 1], list);
 		if (print_special == -1 || print_special != 0)
 			i++;
 		if (print_special > 0)

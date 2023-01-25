@@ -8,14 +8,14 @@ int _printf(const char *format, ...);
 int print_char(va_list list);
 int print_str(va_list list);
 /**
- * struct id_Str - definition ...
+ * struct structidentify - definition ...
  * @cr: type
  * @printer: function to print
  */
-typedef struct id_Str
+typedef struct structidentify
 {
 char *cr;
 int (*printer)(va_list);
-} id_Str;
+} structidentify;
 
 #endif
