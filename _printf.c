@@ -67,7 +67,7 @@ int _printf(const char *format, ...)
 		if (format[i + 1] == '\0')
 			return (-1);
 
-		print_special = printIdentifiers(format[i + 1], list);
+		print_special = print_ids(format[i + 1], list);
 		if (print_special == -1 || print_special != 0)
 			i++;
 		if (print_special > 0)
