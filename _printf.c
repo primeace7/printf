@@ -42,7 +42,7 @@ int _printf(const char *format, ...)
 {
 	unsigned int i;
 	//int identifierPrinted = 0, charPrinted = 0;
-	int print_special = 0, print_char = 0;
+	int print_special = 0, printed_char = 0;
 	va_list list;
 
 	va_start(list, format);
@@ -54,13 +54,13 @@ int _printf(const char *format, ...)
 		if (format[i] != '%')
 		{
 			_putchar(format[i]);
-			print_char++;
+			printed_char++;
 			continue;
 		}
 		if (format[i + 1] == '%')
 		{
 			_putchar('%');
-			print_char++;
+			printed_char++;
 			i++;
 			continue;
 		}
@@ -71,14 +71,14 @@ int _printf(const char *format, ...)
 		if (print_special == -1 || print_special != 0)
 			i++;
 		if (print_special > 0)
-			print_char += print_special;
+			printed_char += print_special;
 
 		if (print_special == 0)
 		{
 			_putchar('%');
-			print_char++;
+			printed_char++;
 		}
 	}
 	va_end(list);
-	return (print_char);
+	return (printed_char);
 }
