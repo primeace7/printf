@@ -1,5 +1,4 @@
 #include "main.h"
-#include <unistd.h>
 #include <stdio.h>
 /**
  * print_char - writes the character c to stdout
@@ -25,12 +24,12 @@ int i;
 char *str = va_arg(list, char*);
 
 if (str == NULL)
-		str = "(null)";
+	str = "(null)";
 else if (*str == '\0')
-		return (-1);
+	return (-1);
 
 for (i = 0; str[i]; i++)
-		_putchar(str[i]);
+	_putchar(str[i]);
 
 return (i);
 }

@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 /**
  * printIdentifiers - print identify
@@ -26,7 +25,7 @@ int printIdentifiers(char next, va_list list)
 	for (j = 0; functionPrint[j].xy != NULL; j++)
 	{
 		if (functionPrint[j].xy[0] == next)
-				return (functionPrint[j].printer(list));
+			return (functionPrint[j].printer(list));
 	}
 	return (0);
 }
@@ -49,7 +48,7 @@ int _printf(const char *format, ...)
 
 	va_start(list, format);
 	if (format == NULL)
-			return (-1);
+		return (-1);
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
@@ -67,14 +66,13 @@ int _printf(const char *format, ...)
 			continue;
 		}
 		if (format[i + 1] == '\0')
-				return (-1);
+			return (-1);
 
 		a = printIdentifiers(format[i + 1], list);
-
 		if (a == -1 || a != 0)
-				i++;
+			i++;
 		if (a > 0)
-				b += a;
+			b += a;
 
 		if (a == 0)
 		{
