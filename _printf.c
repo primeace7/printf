@@ -76,7 +76,7 @@ int _printf(const char *format, ...)
 
 		if (a == 0)
 		{
-			i++;
+			_putchar('%');		
 			b++;
 		}
 	}
