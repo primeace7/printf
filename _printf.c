@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 /**
  * printIdentifiers - print identify
@@ -26,14 +25,7 @@ int printIdentifiers(char next, va_list list)
 	for (j = 0; functionPrint[j].xy != NULL; j++)
 	{
 		if (functionPrint[j].xy[0] == next)
-				return (functionPrint[j].printer(list));
-	}
-
-	if (next == '%')
-		return (2);
-	if (next != ' ')
-	{
-		_putchar(next);
+			return (functionPrint[j].printer(list));
 	}
 	return (0);
 }
@@ -56,11 +48,10 @@ int _printf(const char *format, ...)
 
 	va_start(list, format);
 	if (format == NULL)
-			return (-1);
+		return (-1);
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
-		int j;
 		if (format[i] != '%')
 		{
 			_putchar(format[i]);
@@ -74,31 +65,19 @@ int _printf(const char *format, ...)
 			i++;
 			continue;
 		}
-
 		if (format[i + 1] == '\0')
-				return (-1);
+			return (-1);
 
-		for (j = 1; format[i] != '\0';)
-		{
-			int h = j + i;
-			if (format[h] != ' '){
-				a = printIdentifiers(format[i + 1], list);
-				break;
-			}
+		a = printIdentifiers(format[i + 1], list);
+		if (a == -1 || a != 0)
 			i++;
-		}
-
-		if (a == -1 || a != 0 || a != 2)
-				i++;
 		if (a > 0)
-				b += a;
+			b += a;
+
 		if (a == 0)
 		{
+			_putchar('%');		
 			b++;
-		}
-		if (a == 2)
-		{
-			_putchar('%');
 		}
 	}
 	va_end(list);
