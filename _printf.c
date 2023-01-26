@@ -58,7 +58,7 @@ int _printf(const char *format, ...)
 			b++;
 			continue;
 		}
-		if ((format[i] == '%') && (format[i + 1] == '%'))
+		if (format[i + 1] == '%')
 		{
 			_putchar('%');
 			b++;
@@ -76,6 +76,7 @@ int _printf(const char *format, ...)
 
 		if (a == 0)
 		{
+			_putchar('%');
 			b++;
 		}
 	}
