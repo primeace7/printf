@@ -6,6 +6,7 @@
 int _putchar(char c);
 int _printf(const char *format, ...);
 int print_char(va_list list);
+int print_persent(va_list list);
 int print_str(va_list list);
 int print_unsigned(va_list list);
 int print_int(va_list list);
