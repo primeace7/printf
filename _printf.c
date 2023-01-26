@@ -73,6 +73,12 @@ int _printf(const char *format, ...)
 			i++;
 		if (a > 0)
 			b += a;
+
+		if (a == 0)
+		{
+			_putchar('%');
+			b++;
+		}
 	}
 	va_end(list);
 	return (b);
