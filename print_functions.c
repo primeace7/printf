@@ -20,7 +20,7 @@ int print_char(va_list list)
 
 int print_str(va_list list)
 {
-unsigned long long i;
+unsigned long int i;
 
 char *str = va_arg(list, char*);
 
